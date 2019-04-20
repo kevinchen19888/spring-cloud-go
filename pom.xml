@@ -12,6 +12,7 @@
     <name>spring-cloud-project1</name>
     <description>Demo project for Spring Boot</description>
 
+    <!--指定整个项目的父项目-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -27,6 +28,7 @@
         <!--<module>service-zuul</module>-->
     </modules>
 
+    <!--属性变量配置-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -34,15 +36,23 @@
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
     </properties>
 
+    <!--公共模块加载,非公共模块请一般放在子pom进行加载-->
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
     </dependencies>
 
+    <!--加载依赖管理-->
+    <!--注意：如果使用dependencyManagement,只是对版本进行管理，不会直接引入jar  -->
+    <!--是为了在这里配置版本,为了让子模块pom或者本pom的直接dependencies不单独配置版本 -->
+    <!--如果没有版本,会先到这里找版本号,以免版本冲突  -->
     <dependencyManagement>
         <dependencies>
             <dependency>
