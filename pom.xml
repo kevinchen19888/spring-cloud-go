@@ -21,11 +21,11 @@
     </parent>
 
     <modules>
-        <!--<module>eureka-server</module>-->
-        <!--<module>eureka-client</module>-->
-        <!--<module>service-feign</module>-->
-        <!--<module>service-ribbon</module>-->
-        <!--<module>service-zuul</module>-->
+        <module>eureka-server</module>
+        <module>eureka-client</module>
+        <module>service-feign</module>
+        <module>service-ribbon</module>
+        <module>service-zuul</module>
     </modules>
 
     <!--属性变量配置-->
