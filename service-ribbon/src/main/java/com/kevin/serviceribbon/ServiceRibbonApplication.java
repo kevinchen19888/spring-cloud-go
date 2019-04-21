@@ -12,8 +12,8 @@ import org.springframework.web.client.RestTemplate;
  * ribbon是一个负载均衡客户端，可以很好的控制htt和tcp的一些行为。
  */
 @SpringBootApplication
-@EnableEurekaClient
-//@EnableDiscoveryClient
+@EnableEurekaClient // 如果使用的是eureka注册中心的话,推荐用此注解 TODO
+// @EnableDiscoveryClient // 与上个注解功能类似
 @EnableHystrix  // 开启hystrix
 public class ServiceRibbonApplication {
 

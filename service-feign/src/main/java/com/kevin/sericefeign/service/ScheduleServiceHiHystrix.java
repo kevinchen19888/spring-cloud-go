@@ -12,6 +12,6 @@ import org.springframework.stereotype.Component;
 public class ScheduleServiceHiHystrix implements ScheduleServiceHi {
     @Override
     public String sayHiFromClientOne(String name) {
-        return "sorry "+name+",ServiceFeign error";
+        return "sorry "+name+",ServiceFeign error,begin Hystrix";
     }
 }
