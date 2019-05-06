@@ -7,5 +7,12 @@
 4,service-ribbon:基于ribbon的用于进行负载均衡的服务,3服务在此基础上实现,可只启动两者中的一个
 5,service-zuul: 基于zuul的一个用于进行网关路由的服务;  
 6,config-server: 配置中心服务,可对配置进行动态管理,基于bus服务上可以实现动态刷新配置(通过amqp实现);
-  要在config-client 启动之前启动;   
-7,config-client: 一个演示动态配置的服务实例;
+  要在config-client 启动之前启动;     
+7,config-client: 一个演示动态配置的服务实例;  
+  配置规则是applicationName-profile.yml/properties：如config-client-dev.properties 
+  以下为1.3.1版本支持的配置格式：
+  /{application}/{profile}[/{label}]
+  /{application}-{profile}.yml
+  /{label}/{application}-{profile}.yml
+  /{application}-{profile}.properties
+  /{label}/{application}-{profile}.properties

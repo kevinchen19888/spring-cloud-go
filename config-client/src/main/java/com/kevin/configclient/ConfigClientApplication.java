@@ -31,13 +31,24 @@ public class ConfigClientApplication {
     @Value("${foo}")
     String foo;
 
+//    @Value("${devCommonConfig1}")
+//    String devCommonConfig1;
+
     @Value(("${familyName}"))
     String familyName;
+    // 验证从属性文件中获取值,如果与配置中心的 key相同则会从配置中心获取;
+    @Value("${propertiesConfig}")
+    String propertiesConfig;
 
     @RequestMapping(value = "/hi")
-    public String hi(){
+    public String hi() {
+        StringBuilder builder = new StringBuilder();
 
-        return "the foo is:"+foo+" and the familyName is:"+familyName;
+        builder.append("the foo is: ").append(foo);
+        builder.append(",and the familyName is: ").append(familyName);
+        builder.append(",and the propertiesConfig is: ").append(propertiesConfig);
+//        builder.append(",and devCommonConfig1 is: ").append(devCommonConfig1);
+        return builder.toString();
     }
 }
 
