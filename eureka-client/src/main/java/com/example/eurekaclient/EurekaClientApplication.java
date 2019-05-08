@@ -34,13 +34,13 @@ public class EurekaClientApplication {
     @Value("${kevin-name}")
     String kevinName;
 
-//    @RequestMapping("/hi")
-//    public String home(@RequestParam(value = "name", defaultValue = "kevin") String name) {
-//        return "hi " + kevinName + " ,i am from port:" + port
-//                +" and the eurekaClientVal is: "+eurekaClientKey
-////                +",devCommonConfig1 is: "+devCommonConfig1
-//                ;
-//    }
+    @RequestMapping("/hi")
+    public String home(@RequestParam(value = "name", defaultValue = "kevin") String name) {
+        return "hi " + kevinName + " ,i am from port:" + port
+                +" and the eurekaClientVal is: "+eurekaClientKey
+//                +",devCommonConfig1 is: "+devCommonConfig1
+                ;
+    }
 
 
     @Configuration
